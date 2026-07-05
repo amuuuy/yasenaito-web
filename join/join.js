@@ -29,14 +29,12 @@
 
   var invite = document.getElementById('invite');
   var invalid = document.getElementById('invalid');
-  var steps = document.getElementById('steps');
   var openApp = document.getElementById('open-app');
 
   if (valid) {
     // (2) 検証済みコードのみ・textContent のみで描画。
     document.getElementById('code-text').textContent = code;
     invite.hidden = false;
-    steps.hidden = false;
 
     // (3) custom scheme fallback（旧ビルド・ユニバーサルリンク不発時の保険）。
     openApp.setAttribute('href', 'yasenaito://join?code=' + code);

@@ -8,13 +8,24 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; object-src 'none'">
   <!-- 招待コード（bearer）を Referer で外部に漏らさない -->
   <meta name="referrer" content="no-referrer">
-  <meta name="version" content="1.0.0">
+  <meta name="version" content="1.0.1">
   <title>グループに参加 - 痩せないと</title>
+  <!-- 配置注意: このページはディレクトリ index でなくルートの join.html。
+       GitHub Pages で /join を「リダイレクト無しで」直配信するため（/join → /join/ の
+       301 で ?code= クエリが落ちるリスクを構造的に排除）。アセットは join/ 配下。 -->
   <link rel="stylesheet" href="/join/join.css">
 </head>
 <body>
   <h1>痩せないと</h1>
   <p class="tag">友達と“一緒に”続けるダイエットアプリ</p>
+
+  <!-- JS 無効・実行失敗環境でも参加手段が途絶えないための静的フォールバック -->
+  <noscript>
+    <div class="err-box">
+      <p>このページの自動表示には JavaScript が必要みたい。</p>
+      <p>大丈夫、招待してくれた友達に「合言葉」を直接聞いて、下の手順で参加できるよ。</p>
+    </div>
+  </noscript>
 
   <!-- 有効な ?code= があるときだけ join.js が表示する -->
   <section id="invite" hidden>
@@ -36,11 +47,12 @@
   <a class="store-btn" href="https://apps.apple.com/jp/app/id6781929046">App Store でダウンロード</a>
   <a id="open-app" class="openapp-btn" hidden>アプリを持っている人はこちら（アプリで開く）</a>
 
-  <section id="steps" hidden>
+  <!-- 手順は常時表示（JS 無効でも参加手段が分かるように静的に置く） -->
+  <section id="steps">
     <ol class="steps">
       <li>アプリをダウンロードして開く</li>
       <li>名前を入れてはじめる</li>
-      <li><strong>設定 → 合言葉で参加</strong> にコピーした合言葉を貼り付け</li>
+      <li><strong>設定 → 合言葉で参加</strong> に合言葉を貼り付け</li>
     </ol>
   </section>
 
