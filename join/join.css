@@ -96,5 +96,7 @@ h1 { font-size: 28px; color: #BD5A00; margin: 0 0 4px; }
 }
 .steps li { margin-bottom: 10px; }
 
-.footnote { font-size: 12px; color: #767676; margin-top: 30px; }
-.footnote a { color: #BD5A00; }
+/* 12px の小さい文字なので 4.5:1 以上を確保（#767676=4.35 / #BD5A00=4.35 は NG。
+   #666=5.50 / #A85000=5.28 を実測して採用）。 */
+.footnote { font-size: 12px; color: #666; margin-top: 30px; }
+.footnote a { color: #A85000; }
