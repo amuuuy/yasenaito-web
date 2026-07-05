@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 反射XSS対策: インライン script/style を全面禁止（JS/CSS は外部ファイルのみ）。
+       ?code= はブラウザ側 join.js で regex 検証し、DOM へは textContent でのみ流す。 -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <!-- 招待コード（bearer）を Referer で外部に漏らさない -->
+  <meta name="referrer" content="no-referrer">
+  <meta name="version" content="1.0.0">
+  <title>グループに参加 - 痩せないと</title>
+  <link rel="stylesheet" href="/join/join.css">
+</head>
+<body>
+  <h1>痩せないと</h1>
+  <p class="tag">友達と“一緒に”続けるダイエットアプリ</p>
+
+  <!-- 有効な ?code= があるときだけ join.js が表示する -->
+  <section id="invite" hidden>
+    <div class="invite-box">
+      <p class="invite-title">友達があなたをグループに招待しています</p>
+      <p id="code-text" class="code-big"></p>
+      <button id="copy-btn" type="button" class="copy-btn">合言葉をコピー</button>
+    </div>
+  </section>
+
+  <!-- code が無い/不正なとき join.js が表示する（不正値は一切描画しない） -->
+  <section id="invalid" hidden>
+    <div class="err-box">
+      <p>招待リンクが正しくないみたい。</p>
+      <p>招待してくれた友達に「合言葉」を直接聞いて、アプリの<strong>設定 → 合言葉で参加</strong>に入れてね。</p>
+    </div>
+  </section>
+
+  <a class="store-btn" href="https://apps.apple.com/jp/app/id6781929046">App Store でダウンロード</a>
+  <a id="open-app" class="openapp-btn" hidden>アプリを持っている人はこちら（アプリで開く）</a>
+
+  <section id="steps" hidden>
+    <ol class="steps">
+      <li>アプリをダウンロードして開く</li>
+      <li>名前を入れてはじめる</li>
+      <li><strong>設定 → 合言葉で参加</strong> にコピーした合言葉を貼り付け</li>
+    </ol>
+  </section>
+
+  <p class="footnote"><a href="/privacy/">プライバシーポリシー</a></p>
+
+  <script src="/join/join.js"></script>
+</body>
+</html>
