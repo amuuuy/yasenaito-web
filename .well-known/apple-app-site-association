@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["6M8W2U5GAB.com.yuma.yasenaito"],
+        "components": [
+          { "/": "/join" },
+          { "/": "/join/*" }
+        ]
+      }
+    ]
+  }
+}

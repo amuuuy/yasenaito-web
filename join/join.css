@@ -1,0 +1,102 @@
+/* /join ランディング。privacy ページとトーンを揃える（#fafafa / #BD5A00 / Hiragino）。
+   CSP で style-src 'self' のためインライン style は使えない＝装飾は必ずこのファイルに書く。 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 56px 20px 44px;
+  line-height: 1.8;
+  color: #333;
+  background: #fafafa;
+  text-align: center;
+}
+h1 { font-size: 28px; color: #BD5A00; margin: 0 0 4px; }
+.tag { color: #666; font-size: 14px; margin: 0 0 28px; }
+
+.invite-box {
+  background: #FFF0E0;
+  border-left: 4px solid #BD5A00;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 0 0 26px;
+  text-align: left;
+}
+.invite-title { font-size: 14px; font-weight: 700; color: #7A3A00; margin: 0 0 10px; }
+.code-big {
+  background: #fff;
+  border: 1.5px dashed #BD5A00;
+  border-radius: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #222;
+  padding: 12px 8px;
+  text-align: center;
+  margin: 0 0 10px;
+  word-break: break-all;
+  user-select: all;
+  -webkit-user-select: all;
+}
+.copy-btn {
+  display: block;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #BD5A00;
+  color: #BD5A00;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.err-box {
+  background: #FDECEA;
+  border-left: 4px solid #B3261E;
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin: 0 0 26px;
+  text-align: left;
+  font-size: 14px;
+  color: #58151C;
+}
+.err-box p { margin: 0 0 6px; }
+
+.store-btn {
+  display: block;
+  background: #BD5A00; /* 白文字とのコントラスト 4.5:1 以上（アプリの accentStrong と同値） */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 0 0 12px;
+  text-decoration: none;
+}
+.openapp-btn {
+  display: block;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 12px;
+  margin: 0 0 28px;
+  text-decoration: none;
+}
+
+.steps {
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  padding-left: 24px;
+  margin: 0;
+}
+.steps li { margin-bottom: 10px; }
+
+/* 12px の小さい文字なので 4.5:1 以上を確保（#767676=4.35 / #BD5A00=4.35 は NG。
+   #666=5.50 / #A85000=5.28 を実測して採用）。 */
+.footnote { font-size: 12px; color: #666; margin-top: 30px; }
+.footnote a { color: #A85000; }
