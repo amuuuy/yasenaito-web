@@ -10,9 +10,11 @@
   <meta name="referrer" content="no-referrer">
   <meta name="version" content="1.0.1">
   <title>グループに参加 - 痩せないと</title>
-  <!-- 配置注意: このページはディレクトリ index でなくルートの join.html。
-       GitHub Pages で /join を「リダイレクト無しで」直配信するため（/join → /join/ の
-       301 で ?code= クエリが落ちるリスクを構造的に排除）。アセットは join/ 配下。 -->
+  <!-- 配置: ディレクトリ方式（join/index.html）。/join への直リンクは GitHub Pages が
+       /join/ へ 301 するが、query は保持される（2026-07-05 に本サイトの /privacy?code=...
+       で実測: location: /privacy/?code=... と返る）。拡張子なし join.html 方式は
+       「/join がそれを返す保証」を deploy 前に実測できないため採らない。
+       AASA 側は /join と /join/* の両方をカバー済み。 -->
   <link rel="stylesheet" href="/join/join.css">
 </head>
 <body>
