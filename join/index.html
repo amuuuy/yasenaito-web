@@ -8,7 +8,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; object-src 'none'">
   <!-- 招待コード（bearer）を Referer で外部に漏らさない -->
   <meta name="referrer" content="no-referrer">
-  <meta name="version" content="1.0.1">
+  <meta name="version" content="1.1.0">
   <title>グループに参加 - 痩せないと</title>
   <!-- 配置: ディレクトリ方式（join/index.html）。/join への直リンクは GitHub Pages が
        /join/ へ 301 するが、query は保持される（2026-07-05 に本サイトの /privacy?code=...
@@ -34,6 +34,9 @@
     <div class="invite-box">
       <p class="invite-title">友達があなたをグループに招待しています</p>
       <p id="code-text" class="code-big"></p>
+      <!-- copy-first: アプリを入れる前にコピーしておくと、初回起動時にアプリが
+           クリップボードから合言葉を検出して参加画面へ自動で誘導する(N1 deferred link)。 -->
+      <p class="copy-lead">① まず合言葉をコピーしてね(アプリを入れる前に!)</p>
       <button id="copy-btn" type="button" class="copy-btn">合言葉をコピー</button>
     </div>
   </section>
@@ -46,15 +49,18 @@
     </div>
   </section>
 
-  <a class="store-btn" href="https://apps.apple.com/jp/app/id6781929046">App Store でダウンロード</a>
+  <!-- 🔴 配布リンク(Yuma 手作業): TestFlight 外部グループの公開リンク発行後、href を
+       その URL に差し替える。App Store 一般公開後は
+       https://apps.apple.com/jp/app/id6781929046 に戻す。 -->
+  <a id="store-link" class="store-btn" href="https://apps.apple.com/jp/app/id6781929046">② アプリを入れる</a>
   <a id="open-app" class="openapp-btn" hidden>アプリを持っている人はこちら（アプリで開く）</a>
 
   <!-- 手順は常時表示（JS 無効でも参加手段が分かるように静的に置く） -->
   <section id="steps">
     <ol class="steps">
-      <li>アプリをダウンロードして開く</li>
-      <li>名前を入れてはじめる</li>
-      <li><strong>設定 → 合言葉で参加</strong> に合言葉を貼り付け</li>
+      <li><strong>合言葉をコピー</strong>(上のボタン。アプリを入れる前に!)</li>
+      <li>アプリを入れて開き、名前を入れてはじめる</li>
+      <li>コピーしてあれば<strong>招待が自動で出るよ</strong>。出ないときは <strong>設定 → 合言葉で参加</strong> に貼り付け</li>
     </ol>
   </section>
 
