@@ -38,17 +38,25 @@ h1 { font-size: 28px; color: #BD5A00; margin: 0 0 4px; }
   user-select: all;
   -webkit-user-select: all;
 }
+/* copy-first: コピーが最重要アクションなのでプライマリ(塗り)に昇格(N1)。 */
 .copy-btn {
   display: block;
   width: 100%;
-  background: #fff;
+  background: #BD5A00;
   border: 1px solid #BD5A00;
-  color: #BD5A00;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 10px;
-  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px;
+  border-radius: 12px;
   cursor: pointer;
+}
+
+.copy-lead {
+  font-size: 13px;
+  font-weight: 700;
+  color: #BD5A00;
+  margin: 0 0 8px;
 }
 
 .err-box {
